@@ -34,12 +34,12 @@ expressApp.get('/plugin-manifest.json', function (req, res) {
   res.sendfile('plugin-manifest.json');
 });
 
-expressApp.use('/app', express.static('app'));
-expressApp.use('/app', serveIndex('app'));
+expressApp.use('/docs', express.static('docs'));
+expressApp.use('/docs', serveIndex('docs'));
 
 
 expressApp.get('/', function (req, res) {
-  res.redirect('/app');
+  res.redirect('/docs');
 });
 
 var options = {
